@@ -1,39 +1,23 @@
 <script setup>
+import { ref } from 'vue'
 import { RouterLink, RouterView, useRouter } from 'vue-router'
 
 const router = useRouter()
+const isNavbarClosed = ref(false)
+
+const toggleNavbar = () => {
+  isNavbarClosed.value = !isNavbarClosed.value
+}
 </script>
 
 <template>
   <header>
-    <div class="wrapper">
-      <div
-        v-if="
-          !router.currentRoute.value.path.includes('login') &&
-          !router.currentRoute.value.path.includes('register')
-        "
-        class="hero bg-base-200 min-h-screen"
-      >
-        <div class="hero-content text-center">
-          <div class="max-w-md">
-            <h1 class="text-5xl font-bold">Booking app</h1>
-            <p class="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi
-              exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.
-            </p>
-            <div class="flex w-full flex-col mt-10">
-              <RouterLink to="/login">
-                <div class="card bg-base-300 rounded-box grid h-15 place-items-center">Login</div>
-              </RouterLink>
-              <div class="divider">Ou</div>
-              <RouterLink to="/register">
-                <div class="card bg-base-300 rounded-box grid h-15 place-items-center">
-                  Cadastrar
-                </div>
-              </RouterLink>
-            </div>
-          </div>
-        </div>
+    <div v-show="!isNavbarClosed" class="navbar bg-base-100 bg-primary text-white">
+      <div class="flex-1">
+        <p class="text-center text-sm">
+          🎉 <b>Aproveite o teste grátis para os primeiros 30 dias!</b> 🎉
+          <a href="#" @click="toggleNavbar" class="ml-2 bold">x</a>
+        </p>
       </div>
     </div>
   </header>
