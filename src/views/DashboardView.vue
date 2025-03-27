@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 
 import confetti from 'canvas-confetti'
+import SidebarMenu from '@/components/SidebarMenu.vue'
 
 onMounted(() => {
   confetti({
@@ -51,36 +52,7 @@ const statusClass = (status) => {
 <template>
   <div class="flex h-screen">
     <!-- Sidebar -->
-    <aside class="w-64 bg-base-200 p-4">
-      <h1 class="text-xl font-bold mb-4">Meu Dashboard</h1>
-      <div class="collapse collapse-arrow">
-        <input type="radio" name="my-accordion-2" />
-        <div class="collapse-title font-semibold">Usuários</div>
-        <div class="collapse-content text-sm gap-4 flex flex-col">
-          <a href="google.com">Listar usuários</a>
-          <a href="google.com">Cadastrar usuários</a>
-          <a href="google.com">Editar usuários</a>
-        </div>
-      </div>
-      <div class="collapse collapse-arrow">
-        <input type="radio" name="my-accordion-2" />
-        <div class="collapse-title font-semibold">Financeiro</div>
-        <div class="collapse-content text-sm gap-4 flex flex-col">
-          <a href="google.com">Listar financeiro</a>
-          <a href="google.com">Cadastrar financeiro</a>
-          <a href="google.com">Editar financeiro</a>
-        </div>
-      </div>
-      <div class="collapse collapse-arrow">
-        <input type="radio" name="my-accordion-2" />
-        <div class="collapse-title font-semibold">Agendamentos</div>
-        <div class="collapse-content text-sm gap-4 flex flex-col">
-          <a href="google.com">Listar agendamentos</a>
-          <a href="google.com">Cadastrar agendamentos</a>
-          <a href="google.com">Editar agendamentos</a>
-        </div>
-      </div>
-    </aside>
+    <!-- <SidebarMenu /> -->
 
     <!-- Conteúdo -->
     <main class="flex-1 p-6">
@@ -102,21 +74,21 @@ const statusClass = (status) => {
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
         <div class="card bg-primary text-primary-content shadow-lg p-4">
           <div class="card-body">
-            <h2 class="card-title">👤 Usuários</h2>
-            <p class="text-3xl font-bold">1,234</p>
+            <h2 class="card-title">Clientes</h2>
+            <p class="text-3xl font-bold">85</p>
           </div>
         </div>
 
         <div class="card bg-accent text-primary-content shadow-lg p-4">
           <div class="card-body">
-            <h2 class="card-title">💰 Vendas</h2>
+            <h2 class="card-title">Vendas</h2>
             <p class="text-3xl font-bold">R$ 45,678</p>
           </div>
         </div>
 
         <div class="card bg-secondary text-primary-content shadow-lg p-4">
           <div class="card-body">
-            <h2 class="card-title">📅 Agendamentos</h2>
+            <h2 class="card-title">Agendamentos</h2>
             <p class="text-3xl font-bold">789</p>
           </div>
         </div>

@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import DashboardView from '../views/DashboardView.vue'
 import ServicesView from '../views/ServicesView.vue'
 import Entry from '../views/Entry.vue'
+import SignedinLayout from '@/layouts/SignedinLayout.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,14 +27,18 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue'),
     },
     {
-      path: '/dashboard',
-      name: 'dashboard',
-      component: () => import('../views/DashboardView.vue'),
-    },
-    {
-      path: '/services',
-      name: 'services',
-      component: ServicesView,
+      path: '/',
+      component: SignedinLayout,
+      children: [
+        {
+          path: 'dashboard',
+          component: DashboardView,
+        },
+        {
+          path: 'services',
+          component: ServicesView,
+        },
+      ],
     },
   ],
 })
