@@ -64,6 +64,7 @@
         Agendamentos
       </div>
       <div class="collapse-content text-sm gap-4 flex flex-col">
+        <router-link to="/schedules">Ver agenda</router-link>
         <a href="google.com">Criar agendamento</a>
         <a href="google.com">Configurações</a>
       </div>

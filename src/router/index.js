@@ -5,6 +5,7 @@ import ServicesView from '../views/ServicesView.vue'
 import ClientsView from '../views/ClientsView.vue'
 import Entry from '../views/Entry.vue'
 import SignedinLayout from '@/layouts/SignedinLayout.vue'
+import SchedulesView from '../views/SchedulesView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,6 +45,12 @@ const router = createRouter({
           component: ClientsView,
         },
       ],
+    },
+    {
+      path: '/schedules',
+      name: 'schedules',
+      component: SchedulesView,
+      meta: { requiresAuth: true },
     },
   ],
 })

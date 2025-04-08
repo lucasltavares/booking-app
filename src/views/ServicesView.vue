@@ -60,7 +60,7 @@
     <!-- Modal -->
     <div
       v-if="isModalOpen"
-      class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+      class="fixed inset-0 flex items-center justify-center bg-opacity-50"
     >
       <div class="modal modal-open">
         <div class="modal-box">
