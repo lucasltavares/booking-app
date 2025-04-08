@@ -88,7 +88,7 @@
         Clientes
       </div>
       <div class="collapse-content text-sm gap-4 flex flex-col">
-        <a href="google.com">Ver clientes</a>
+        <a href="#" @click="$router.push('/clients')">Ver clientes</a>
         <a href="google.com">Configurações</a>
       </div>
     </div>
